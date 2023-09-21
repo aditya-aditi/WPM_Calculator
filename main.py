@@ -1,5 +1,5 @@
-# import tkinter as tk
 import customtkinter as ctk
+from tkinter.messagebox import showinfo
 import random
 import time
 
@@ -10,6 +10,9 @@ def start_writing():
     global time_start
     txt_write_para.configure(state="normal")
     time_start = time.time()
+
+def show_wpm(wpm):
+    showinfo("Calculated WPM", f"Your wpm is {wpm}")
 
 
 def generate_para():
@@ -36,6 +39,7 @@ def calculate_wpm():
     # txt_wpm.pack(fill=tk.BOTH)
     # todo: find a way to display the wpm in the GUI instead of the console
     print("WPM: " + str(wpm))
+    show_wpm(wpm)
 
 # Tkinter Window
 window = ctk.CTk()
