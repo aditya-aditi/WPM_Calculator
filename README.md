@@ -4,6 +4,9 @@ This application is a simple and fun way to test your typing speed and accuracy.
 
 The application is useful for everyone, whether you are a student, programmer, a professor, or a professional.
 
+#### App Screenshot
+![app image](img/app_image.png)
+
 ## Features
 - The application has a simple and user-friendly interface.
 - Number of paragraphs available to type.
