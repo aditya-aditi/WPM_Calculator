@@ -14,7 +14,7 @@ The application is useful for everyone, whether you are a student, programmer, a
 
 ## Requirements
 - Python 3.6 or higher
-- tkinter library
+- customtkinter library
 
 ## Installation
 1. Clone the repository to your local machine
@@ -30,7 +30,7 @@ git clone https://github.com/https://github.com/aditya-aditi/WPM_Calculator.git
 
 2. Install the required dependencies
 ```
-pip install tkinter
+pip install customtkinter
 ```
 
 3. Run the application with the following command
