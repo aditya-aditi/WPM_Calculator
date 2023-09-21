@@ -1,4 +1,5 @@
-import tkinter as tk
+# import tkinter as tk
+import customtkinter as ctk
 import random
 import time
 
@@ -7,7 +8,7 @@ time_start = 0
 # Event Handlers
 def start_writing():
     global time_start
-    txt_write_para.config(state=tk.NORMAL)
+    txt_write_para.configure(state="normal")
     time_start = time.time()
 
 
@@ -27,7 +28,7 @@ def generate_para():
     return random_para
 
 def calculate_wpm():
-    txt_para = txt_write_para.get("1.0", tk.END)
+    txt_para = txt_write_para.get("1.0", ctk.END)
     words = txt_para.split()
     wpm = len(words) / ((time.time() - time_start)/60)
     # txt_wpm = tk.Text(height=10, width=50, padx=10, pady=10, font=('helvetica', 14))
@@ -37,35 +38,35 @@ def calculate_wpm():
     print("WPM: " + str(wpm))
 
 # Tkinter Window
-window = tk.Tk()
+window = ctk.CTk()
 window.title("WPM Calculator")
 window.geometry("800x600")
 
-window.rowconfigure([0, 1], weight=1)
-window.columnconfigure([0], weight=1)
+window.grid_rowconfigure([0, 1], weight=1)
+window.grid_columnconfigure([0], weight=1)
 
-frame_para = tk.Frame(relief=tk.SUNKEN, borderwidth=3)
+frame_para = ctk.CTkFrame(master=window, fg_color='#ececec')#relief=ctk.SUNKEN, borderwidth=3
 frame_para.grid(row=0, column=0, sticky="nsew", pady=10, padx=10)
 
 # lbl_para = tk.Label(master=frame_para ,text="The paragraph")
 # lbl_para.pack()
 
-txt_para = tk.Text(master=frame_para, font=('helvetica', 14), width=20)
+txt_para = ctk.CTkTextbox(master=frame_para, font=('helvetica', 14), height=300)
 txt_para.insert("1.0", generate_para())
-txt_para.config(state=tk.DISABLED)
-txt_para.pack(fill=tk.BOTH)
+txt_para.configure(state="disabled")
+txt_para.pack(fill=ctk.X)
 
-txt_write_para = tk.Text(height=10, width=50, padx=10, pady=10, font=('helvetica', 14))
-txt_write_para.config(state=tk.DISABLED)
+txt_write_para = ctk.CTkTextbox(master=window, height=10, width=50, padx=10, pady=10, font=('helvetica', 14))
+txt_write_para.configure(state="disabled")
 txt_write_para.grid(row=1, column=0, sticky="nsew", padx=10, pady=10)
 
-frame_btn = tk.Frame()
+frame_btn = ctk.CTkFrame(master=window, fg_color='#ececec')
 frame_btn.grid(row=2, column=0, sticky="nsew", padx=10, pady=10)
 
-btn_calculate_wpm = tk.Button(master=frame_btn, text="Calculate WPM", height=3, width=50, command=calculate_wpm)
-btn_calculate_wpm.pack(side=tk.LEFT, padx=10, pady=10)
+btn_calculate_wpm = ctk.CTkButton(master=frame_btn, text="Calculate WPM", command=calculate_wpm)
+btn_calculate_wpm.pack(padx=10, pady=10)
 
-btn_start_writing = tk.Button(master=frame_btn, text="Start Writing", height=3, width=50, command=start_writing)
-btn_start_writing.pack(side=tk.LEFT, padx=10, pady=10)
+btn_start_writing = ctk.CTkButton(master=frame_btn, text="Start Writing", command=start_writing)
+btn_start_writing.pack(padx=10, pady=10)
 
 window.mainloop()
