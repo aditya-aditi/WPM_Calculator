@@ -1,4 +1,6 @@
 # WPM Calculator
+[![Last Commit](https://img.shields.io/github/last-commit/aditya-aditi/WPM_Calculator)](https://github.com/aditya-aditi/WPM_Calculator/commits)
+[![Stars](https://img.shields.io/github/stars/aditya-aditi/WPM_Calculator?style=social)](https://github.com/aditya-aditi/WPM_Calculator/stargazers)
 ## Introduction
 This application is a simple and fun way to test your typing speed and accuracy. It features a variety of paragraphs to type. The application also calculates your wpm (words per minute) so you can track your progress over time.
 
