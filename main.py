@@ -1,5 +1,6 @@
 import customtkinter as ctk
 from tkinter.messagebox import showinfo
+from tkinter import PhotoImage
 import random
 import time
 
@@ -45,6 +46,8 @@ def calculate_wpm():
 window = ctk.CTk()
 window.title("WPM Calculator")
 window.geometry("800x600")
+# icon =  PhotoImage(file = "img/icon-1-fancy-ico.ico")
+window.wm_iconbitmap("img/icon-2-simple-ico.ico")
 
 window.grid_rowconfigure([0, 1], weight=1)
 window.grid_columnconfigure([0], weight=1)
